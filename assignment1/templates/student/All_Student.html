@@ -1,0 +1,33 @@
+{% extends "Homepage.html" %}
+
+{% block title %} All_Student {% endblock %}
+
+{% block body %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Class Name </th>
+      <th scope="col">Phone Number </th>
+      <th scope="col">Email Address </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for SNO in student %}
+
+    <tr class="table-info">
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{SNO.first_name}}</td>
+      <td>{{SNO.last_name}}</td>
+      <td>{{SNO.class_name}}</td>
+      <td>{{SNO.email}}</td>
+      <td>{{SNO.phone}}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
